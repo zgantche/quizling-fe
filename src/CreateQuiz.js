@@ -18,11 +18,7 @@ function CreateQuiz() {
 
 
     const addQuestion = () => {
-        var id = 0;
-        for (var c in questions) {
-            if (questions.hasOwnProperty(c)) id++;
-        }
-        id++;
+        let id = questions.length+1;
         const text = '';
         const answers = ['', ''];
         const newQuestion = { id, text, answers }
@@ -33,11 +29,11 @@ function CreateQuiz() {
         let modifiedQuestions = questions;
         for (var i in modifiedQuestions) {
             if (modifiedQuestions[i].id === 2) {
-                modifiedQuestions[i].answers.push('');
+                modifiedQuestions[i].answers.push('')
                 break;
             }
         }
-        setQuestions(modifiedQuestions);
+        setQuestions([...modifiedQuestions]);
     }
 
     return (
