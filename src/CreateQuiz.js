@@ -1,4 +1,4 @@
-import ListofQuestions from './components/ListofQuestions'
+import QuestionList from './components/QuestionList'
 import { useState } from 'react'
 
 function CreateQuiz() {
@@ -29,11 +29,11 @@ function CreateQuiz() {
         setQuestions([...questions, newQuestion])
     }
 
-    const addAnswer = (id) => {
+    const addAnswer = () => {
         let modifiedQuestions = questions;
         for (var i in modifiedQuestions) {
-            if (modifiedQuestions[i] === id) {
-                modifiedQuestions.answers.push('');
+            if (modifiedQuestions[i].id === 2) {
+                modifiedQuestions[i].answers.push('');
                 break;
             }
         }
@@ -45,19 +45,19 @@ function CreateQuiz() {
             style={{
                 display: "flex",
                 justifyContent: "center",
-                alignItems: "center"
+                alignItems: "center",
+                height: '100vh'
             }}>
             <header>
                 <h1>Create Quiz</h1>
                 <p>Please submit Quiz when finished                                 .</p>
-                <ListofQuestions
+                <QuestionList
                     questions={questions}
-                    anotherAnswer={addAnswer}
                 />
                 <button className='btn' onClick={addQuestion}> Another Question</button>
                 <br />
                 <br />
-                <button className='btn'>Submit Quiz</button>
+                <button className='btn' onClick={addAnswer}>Another Answer to Question 2</button>
             </header>
         </div>
     );

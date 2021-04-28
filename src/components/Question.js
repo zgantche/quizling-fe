@@ -8,7 +8,7 @@ const Question = ({ question }) => {
 
     return (
         <div className='question'>
-            <div style={{ border: 'double', borderRadius: '20px' }} >
+            <div style={{ border: 'double', borderRadius: '20px', backgroundColor: 'lightgrey'}} >
                 <label>
                     <h4>Question {question.id}</h4>
                     <textarea

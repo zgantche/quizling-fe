@@ -6,7 +6,7 @@ const Answer = ({ answers }) => {
 
     return (
         <div className='answers'>
-            <div style={{ border: 'outset', borderRadius: '20px' }} >
+            <div style={{ border: 'outset', borderRadius: '20px', backgroundColor: 'white' }} >
                 <label>
                     <br />
                     <input type='text' 
