@@ -1,17 +1,17 @@
-import Question from './Question'
+import Question from './Question';
 
-const ListofQuestions = ({ questions }) => {
+const QuestionList = ({ questions }) => {
 
-    return (
-        <>
-            {questions.map((q) => (
-                <Question
-                    key={q.id}
-                    question={q}
-                />
-            ))}
-        </>
-    )
+  return (
+    <>
+      {questions.map((q) => (
+        <Question
+          key={q.id}
+          question={q}
+        />
+      ))}
+    </>
+  );
 }
 
-export default ListofQuestions
+export default QuestionList;
