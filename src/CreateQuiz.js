@@ -27,9 +27,9 @@ function CreateQuiz() {
 
     const addAnswer = () => {
         let modifiedQuestions = questions;
-        for (var i in modifiedQuestions) {
-            if (modifiedQuestions[i].id === 2) {
-                modifiedQuestions[i].answers.push('')
+        for (let i of modifiedQuestions) {
+            if (modifiedQuestions.id === 2) {
+                modifiedQuestions.answers.push('')
                 break;
             }
         }
