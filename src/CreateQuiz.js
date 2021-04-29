@@ -1,43 +1,12 @@
 import QuestionList from './components/QuestionList';
-import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { decrement, increment } from './slices/counterSlice';
+import { increment, incrementByAmount } from './slices/counterSlice';
+import { addQuestion } from './slices/quizTemplateSlice';
 
 function CreateQuiz() {
   const count = useSelector((state) => state.counter.value);
+  const questions = useSelector((state) => state.quizTemplate.questions);
   const dispatch = useDispatch();
-
-  const [questions, setQuestions] = useState([
-    {
-      id: 1,
-      text: 'What is my favourite colour?',
-      answers: ['red', 'blue']
-    },
-    {
-      id: 2,
-      text: 'What is my name?',
-      answers: ['Steve', 'Zap']
-    }
-  ]);
-
-  const addQuestion = () => {
-    let id = questions.length+1;
-    const text = '';
-    const answers = ['', ''];
-    const newQuestion = { id, text, answers }
-    setQuestions([...questions, newQuestion])
-  }
-
-  const addAnswer = () => {
-    let modifiedQuestions = questions;
-    for (let i of modifiedQuestions) {
-      if (modifiedQuestions.id === 2) {
-        modifiedQuestions.answers.push('')
-        break;
-      }
-    }
-    setQuestions([...modifiedQuestions]);
-  }
 
   return (
     <div className="createQuiz"
@@ -53,12 +22,15 @@ function CreateQuiz() {
         <QuestionList
           questions={questions}
         />
-        <button className='btn' onClick={addQuestion}> Another Question</button>
+        <button className='btn' onClick={() => dispatch(addQuestion())}> Another Question</button>
         <br />
         <br />
-        <button className='btn' onClick={addAnswer}>Another Answer to Question 2</button>
+        <button className='btn' >Save and Preview Quiz</button>
         <br /><br />
+        Current counter: {count}
+        <br />
         <button className='btn' onClick={() => dispatch(increment())}>Increment Counter</button>
+        <button className='btn' onClick={() => dispatch(incrementByAmount(10))}>Increment Counter by 5</button>
       </header>
     </div>
   );

@@ -1,10 +1,13 @@
 import React from 'react';
 import Answer from './Answer';
 import {useState} from 'react';
+import { useDispatch } from 'react-redux';
+import { addAnswer } from '../slices/quizTemplateSlice';
 
 const Question = ({ question }) => {
-
   const [text, setText] = useState('');
+
+  const dispatch = useDispatch();
 
   return (
     <div className='question'>
@@ -23,14 +26,14 @@ const Question = ({ question }) => {
             />
           ))}
           <br />
-          <button>Add Another Answer</button>
+          <button onClick={() => dispatch(addAnswer(question.id))}>Add Another Answer</button>
           <br />
           <p></p>
 
         </label>
       </div>
     </div>
-  )
+  );
 }
 
 export default Question;
