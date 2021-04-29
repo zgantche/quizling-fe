@@ -1,7 +1,7 @@
-import QuestionList from './components/QuestionList';
 import { useSelector, useDispatch } from 'react-redux';
-import { increment, incrementByAmount } from './slices/counterSlice';
-import { addQuestion } from './slices/quizTemplateSlice';
+import QuestionList from '../components/QuestionList';
+import { increment, incrementByAmount } from '../slices/counterSlice';
+import { addQuestion } from '../slices/quizTemplateSlice';
 
 function CreateQuiz() {
   const count = useSelector((state) => state.counter.value);
