@@ -11,7 +11,7 @@ const HeaderMenu = () => {
           <Nav.Link href="/createQuiz">Create a New Quiz</Nav.Link>
         </Nav>
         <Nav>
-          <Nav.Link href="https://github.com/zgantche/quizling-fe">Github</Nav.Link>
+          <Nav.Link href="https://github.com/zgantche/quizling-fe" target="_blank">Github</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
