@@ -5,6 +5,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import HeaderMenu from './components/HeaderMenu';
 import CreateQuiz from './pages/CreateQuiz';
 import Home from './pages/Home';
 
@@ -13,11 +14,9 @@ function App() {
     <Router>
       <div className="App">
         <header>
-          <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/createQuiz">Create a New Quiz</Link></li>
-          </ul>
+          {/* include header things here */}
         </header>
+        <HeaderMenu />
         <body>
           <Switch>
             <Route exact path="/">
